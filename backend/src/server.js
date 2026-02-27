@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const fs = require('fs');
+const path = require('path');
 const rateLimit = require('express-rate-limit');
 const swaggerUi = require('swagger-ui-express');
 const dotenv = require('dotenv');
@@ -57,6 +59,12 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
+
+// Write request logs to logs/access.log file
+const logsDir = path.join(__dirname, '..', 'logs');
+if (!fs.existsSync(logsDir)) fs.mkdirSync(logsDir);
+const logStream = fs.createWriteStream(path.join(logsDir, 'access.log'), { flags: 'a' });
+app.use(morgan('[:date[iso]] :method :url :status :response-time[0]ms', { stream: logStream }));
 
 // ─────────────────────────────────────────────
 // API Routes (Versioned)

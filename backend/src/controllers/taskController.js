@@ -152,7 +152,7 @@ const updateTask = async (req, res, next) => {
         }
 
         task = await Task.findByIdAndUpdate(req.params.id, updates, {
-            new: true,
+            returnDocument: 'after',
             runValidators: true,
         }).populate('createdBy', 'name email');
 

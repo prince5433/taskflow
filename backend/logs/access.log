@@ -1,0 +1,14 @@
+[2026-02-27T06:11:46.364Z] GET /api/v1/auth/me 200 220ms
+[2026-02-27T06:11:46.569Z] GET /api/v1/auth/me 304 185ms
+[2026-02-27T06:11:46.767Z] GET /api/v1/tasks?page=1&limit=12 304 374ms
+[2026-02-27T06:11:47.119Z] GET /api/v1/tasks?page=1&limit=12 304 345ms
+[2026-02-27T06:11:47.123Z] GET /api/v1/tasks/stats 304 722ms
+[2026-02-27T06:11:47.302Z] GET /api/v1/tasks/stats 304 170ms
+[2026-02-27T06:12:18.735Z] POST /api/v1/auth/register 201 937ms
+[2026-02-27T06:12:18.978Z] GET /api/v1/tasks/stats 200 163ms
+[2026-02-27T06:12:19.072Z] GET /api/v1/tasks?page=1&limit=12 200 263ms
+[2026-02-27T06:12:19.140Z] GET /api/v1/tasks/stats 304 153ms
+[2026-02-27T06:12:19.340Z] GET /api/v1/tasks?page=1&limit=12 304 257ms
+[2026-02-27T06:12:45.169Z] POST /api/v1/tasks 201 270ms
+[2026-02-27T06:12:45.366Z] GET /api/v1/tasks/stats 200 177ms
+[2026-02-27T06:12:45.528Z] GET /api/v1/tasks?page=1&limit=12 200 341ms
